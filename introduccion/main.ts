@@ -158,3 +158,52 @@ console.log(personaje2)
 
 let [ a3, r3, ...restoColores ] = colores;
 console.log(a3, r3, restoColores);
+
+let [ , r4, a4 ] = colores;
+console.log(r4, a4);
+
+// Estructuras condicionales
+
+if (colores.length === 0) {
+  console.log('No hay colores');
+} else {
+  console.log(`Hay ${colores.length} colores`);
+}
+
+
+for (let i = 0;i < colores.length;i++) {
+  console.log(colores[i]);
+}
+
+for (let i in colores) {
+  console.log(colores[i]);
+}
+
+for (let color of colores) {
+  console.log(color);
+}
+
+let personas = {
+  "-x3jg34gh": {
+    "nombre": "Charly",
+    "apellido": "Falco"
+  },
+  "-x3asdasd": {
+    "nombre": "Mike",
+    "apellido": "Kozinski"
+  }
+}
+
+let arrPersonas = [];
+for (let key in personas) {
+  arrPersonas.push({
+    id: key,
+    // nombre: personas[key].nombre,
+    // apellido: personas[key].apellido,
+    ...personas[key]
+  });
+}
+
+console.log(arrPersonas)
+
+// Object.keys(personas)
